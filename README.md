@@ -23,16 +23,16 @@ CivicPulse consolidates duplicate reports into a single issue, allowing citizens
 
 ## Tech Stack
 
-# Frontend
+### Frontend
 - HTML
 - CSS
 - JavaScript
 
-# Backend
+### Backend
 - Java
 - SpringBoot
 
-# Database
+### Database
 - PostgreSQL
 
 ## Project Structure
