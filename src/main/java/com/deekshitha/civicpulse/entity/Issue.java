@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.PrePersist;
 import java.time.LocalDateTime;
 
 @Entity 
@@ -13,14 +14,20 @@ public class Issue {
     private Long id;
     private String title;
     private String description;
-    private String status;
+    private String status = "OPEN";
+    private String location;
     private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
 
     public Issue() {
 
     }
 
-    public Issue(String title, String description) {
+    public Issue(String title, String description, String location) {
         this.title = title;
         this.description = description;
     }
@@ -41,6 +48,10 @@ public class Issue {
         return status;
     }
 
+    public String getlocation() {
+        return location;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -59,6 +70,10 @@ public class Issue {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setlocation(String location) {
+        this.location = location;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
