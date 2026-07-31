@@ -30,6 +30,7 @@ public class Issue {
     public Issue(String title, String description, String location) {
         this.title = title;
         this.description = description;
+        this.location = location;
     }
 
     public Long getId() {
