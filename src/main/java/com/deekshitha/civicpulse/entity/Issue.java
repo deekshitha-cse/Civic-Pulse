@@ -14,9 +14,15 @@ public class Issue {
     private Long id;
     private String title;
     private String description;
-    private String status = "OPEN";
+    private IssueStatus status = IssueStatus.OPEN;
     private String location;
     private LocalDateTime createdAt;
+
+    public enum IssueStatus {
+        OPEN,
+        IN_PROGRESS,
+        RESOLVED
+    }
 
     @PrePersist
     protected void onCreate() {
@@ -45,7 +51,7 @@ public class Issue {
         return description;
     }
 
-    public String getStatus() {
+    public IssueStatus getStatus() {
         return status;
     }
 
@@ -69,7 +75,7 @@ public class Issue {
         this.description = description;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(IssueStatus status) {
         this.status = status;
     }
 
