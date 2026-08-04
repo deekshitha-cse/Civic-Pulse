@@ -49,7 +49,7 @@ public class Issue {
         return status;
     }
 
-    public String getlocation() {
+    public String getLocation() {
         return location;
     }
 
@@ -73,7 +73,7 @@ public class Issue {
         this.status = status;
     }
 
-    public void setlocation(String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
