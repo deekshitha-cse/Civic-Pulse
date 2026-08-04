@@ -1,6 +1,7 @@
 package com.deekshitha.civicpulse.service;
 
 import com.deekshitha.civicpulse.entity.Comment;
+import com.deekshitha.civicpulse.entity.Issue;
 import com.deekshitha.civicpulse.repository.CommentRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,9 @@ public class CommentService {
 
     public Comment createComment(Comment comment) {
         return commentRepository.save(comment);
+    }
+
+    public List<Comment> getCommentsByIssue(Issue issue) {
+        return commentRepository.findByIssue(issue);
     }
 }
