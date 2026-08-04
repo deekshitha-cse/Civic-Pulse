@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.PrePersist;
 import java.time.LocalDateTime;
 
@@ -14,6 +16,7 @@ public class Issue {
     private Long id;
     private String title;
     private String description;
+    @Enumerated(EnumType.STRING)
     private IssueStatus status = IssueStatus.OPEN;
     private String location;
     private LocalDateTime createdAt;
